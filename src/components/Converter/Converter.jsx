@@ -13,12 +13,14 @@ import { currencyItems } from 'data/currency';
 const Converter = () => {
   /* -------------------------------------------------------------------------- */
   const currencyEditor = code => {
-    return currencyItems.reduce((acc, element) => {
-      if (code.includes(element.code)) {
-        acc.push(element.currency);
-      }
-      return acc;
-    }, []);
+    if (code) {
+      return currencyItems.reduce((acc, element) => {
+        if (code.includes(element.code)) {
+          acc.push(element.currency);
+        }
+        return acc;
+      }, []);
+    }
   };
 
   /* -------------------------------------------------------------------------- */
