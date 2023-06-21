@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom/client';
 import 'modern-normalize/modern-normalize.css';
 import 'react-toastify/dist/ReactToastify.css';
 import App from 'components/App/App';
-import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from 'store/store';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/Currency-Converter">
+    <Provider store={store}>
       <App />
-    </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
