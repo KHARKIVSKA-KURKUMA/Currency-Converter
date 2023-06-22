@@ -40,7 +40,7 @@ const Converter = () => {
     return () => {
       window.removeEventListener('keydown', handleModal);
     };
-  }, [visibility]);
+  }, [visibility, dispatch]);
   /* -------------------------------------------------------------------------- */
   useEffect(() => {
     if (loader === true) {

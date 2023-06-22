@@ -18,7 +18,7 @@ const Header = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchExchangeRates());
-  }, []);
+  }, [dispatch]);
   const { EUR, JPY, CAD, GBP, CNY, USD } = useSelector(setRate);
   return (
     <Container>
