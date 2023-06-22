@@ -20,7 +20,7 @@ const ConvertingHistory = () => {
           ({ old_amount, old_currency, new_amount, new_currency }) => (
             <ListItem key={nanoid(2)}>
               <ExchangeInfo>
-                {old_amount} {old_currency} ({currencyEditor(old_currency)}) =
+                {old_amount} {old_currency} ({currencyEditor(old_currency)}) ={' '}
                 {new_amount} {new_currency} ({currencyEditor(new_currency)})
               </ExchangeInfo>
             </ListItem>
