@@ -1,14 +1,15 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  text-align: center;
-  padding: 60px 0;
+  position: relative;
 `;
 
 export const RateContainer = styled.div`
   display: flex;
   position: relative;
   justify-content: center;
+  padding: 60px 0;
+  gap: 140px;
 `;
 export const RateWrap = styled.div`
   background-color: #eae1e1;
@@ -25,7 +26,6 @@ export const Hryvnia = styled.p`
   color: #0a0a0a;
   font-size: 26px;
   padding-top: 50px;
-  margin-right: 150px;
   font-weight: 500;
   font-family: 'Lexend Peta', sans-serif;
 `;
@@ -43,6 +43,6 @@ export const Amount = styled.span`
 `;
 export const Img = styled.img`
   position: absolute;
-  top: -25px;
-  left: 255px;
+  top: -20px;
+  left: 200px;
 `;
