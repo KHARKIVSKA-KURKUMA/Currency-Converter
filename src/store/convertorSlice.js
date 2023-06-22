@@ -4,11 +4,13 @@ import { fetchAnswer } from 'store/operation';
 const handlePending = state => {
   state.isLoading = true;
   state.error = '';
+  state.isOpen = false;
 };
 
 const handleRejected = (state, { payload }) => {
   state.isLoading = false;
   state.error = payload;
+  state.isOpen = false;
 };
 
 const converterSlice = createSlice({
@@ -18,6 +20,12 @@ const converterSlice = createSlice({
     isLoading: false,
     error: '',
     result: [],
+    isOpen: false,
+  },
+  reducers: {
+    setVisibilityValue: state => {
+      state.isOpen = false;
+    },
   },
   extraReducers: builder => {
     builder
@@ -26,6 +34,7 @@ const converterSlice = createSlice({
         state.isLoading = false;
         state.error = '';
         state.result = payload;
+        state.isOpen = true;
         state.convertHistory = [...state.convertHistory, payload];
       })
       .addCase(fetchAnswer.rejected, handleRejected);
@@ -33,3 +42,4 @@ const converterSlice = createSlice({
 });
 
 export const converterReducer = converterSlice.reducer;
+export const { setVisibilityValue } = converterSlice.actions;

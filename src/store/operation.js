@@ -27,3 +27,18 @@ export const fetchAnswer = createAsyncThunk(
     }
   }
 );
+
+const EXCHANGE_RATES_KEY = '84fcb961f1875f74846b1a7d';
+axios.defaults.baseURL = 'https://v6.exchangerate-api.com/v6/';
+
+export const fetchExchangeRates = createAsyncThunk(
+  'rates/fetchExchangeRates',
+  async (_, { rejectWithValue }) => {
+    try {
+      const { data } = await axios(`${EXCHANGE_RATES_KEY}/latest/UAH`);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);

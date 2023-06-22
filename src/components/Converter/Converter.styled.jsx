@@ -6,15 +6,16 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 `;
 
 export const Title = styled.h1`
   font-weight: 700;
-  font-size: 32px;
-  line-height: 1.3;
+  font-size: 44px;
+  margin-bottom: 10px;
   text-align: center;
-  color: #1a1a1a;
-  max-width: 654px;
+  color: #333;
+  font-family: 'Lexend Peta', sans-serif;
 `;
 
 export const FormContainer = styled.form`
@@ -33,28 +34,51 @@ export const FormGroup = styled.div`
 `;
 
 export const Button = styled.button`
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #007bff;
+  margin-top: 30px;
+  padding: 15px 30px;
+  background-color: #32c682;
   color: #fff;
   border: none;
-  border-radius: 3px;
+  border-radius: 10px;
   font-size: 16px;
+`;
+export const Backdrop = styled.div`
+  position: absolute;
 `;
 export const ResultContainer = styled.div`
   margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  padding: 70px 20px;
+  max-width: 600px;
+  background-color: #bdbdbd;
+  border-radius: 20px;
 `;
 
 export const ResultText = styled.p`
-  font-size: 24px;
+  font-size: 30px;
   margin-bottom: 20px;
+  font-family: 'Lexend Peta', sans-serif;
 `;
 
 export const AmountText = styled.p`
-  font-size: 34px;
-  font-weight: bold;
+  font-size: 44px;
+  font-weight: 800;
   margin: 0;
+`;
+
+export const CloseBtn = styled.button`
+  background-color: transparent;
+  border-radius: 50%;
+  border: 2px solid #333;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 20px;
+  top: 10px;
 `;

@@ -1,7 +1,10 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import { converterReducer } from './convertorSlice';
+import { ratesReducer } from './ratesSlice';
 
-const reducer = combineReducers({
+const reducer = {
   converter: converterReducer,
-});
+  rates: ratesReducer,
+};
+
 export const store = configureStore({ reducer });
