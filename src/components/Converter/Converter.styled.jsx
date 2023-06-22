@@ -1,3 +1,4 @@
+import { devices } from 'services/mediaScreen';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -11,11 +12,14 @@ export const Container = styled.div`
 
 export const Title = styled.h1`
   font-weight: 700;
-  font-size: 44px;
+  font-size: 34px;
   margin-bottom: 10px;
   text-align: center;
   color: #333;
   font-family: 'Lexend Peta', sans-serif;
+  @media ${devices.mobileL} {
+    font-size: 44px;
+  }
 `;
 
 export const FormContainer = styled.form`
