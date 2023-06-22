@@ -9,7 +9,7 @@ import {
   RateContainer,
 } from './Header.styled';
 import { setRate } from 'store/selectors';
-import arrow from '../../data/arrow.png';
+import arrow from '../../UI/arrow.png';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchExchangeRates } from 'store/operation';
