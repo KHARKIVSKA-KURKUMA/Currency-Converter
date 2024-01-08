@@ -99,9 +99,6 @@ const ConverterForm = () => {
             <MenuItem value={'EUR'}>
               <span>€ -</span>EUR (Euro)
             </MenuItem>
-            <MenuItem value={'UAH'}>
-              <span>₴ -</span>UAH (Hryvnia)
-            </MenuItem>{' '}
             <MenuItem value={'JPY'}>
               <span>¥ -</span>JPY (Yen)
             </MenuItem>
@@ -129,9 +126,6 @@ const ConverterForm = () => {
             >
               <span>€ -</span>EUR (Euro)
             </MenuItem>
-            <MenuItem value={'UAH'}>
-              <span>₴ -</span>UAH (Hryvnia)
-            </MenuItem>{' '}
             <MenuItem value={'JPY'}>
               <span>¥ -</span>JPY (Yen)
             </MenuItem>
