@@ -4,51 +4,51 @@ import {
   MenuItem,
   Select,
   TextField,
-} from '@mui/material';
-import { Button, FormContainer, FormGroup } from './Converter.styled';
-import { useState } from 'react';
-import { toast } from 'react-toastify';
-import { useDispatch } from 'react-redux';
-import { fetchAnswer } from 'store/operation';
+} from "@mui/material";
+import { Button, FormContainer, FormGroup } from "./Converter.styled";
+import { useState } from "react";
+import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { fetchAnswer } from "store/operation";
 
 const ConverterForm = () => {
-  const [amount, setAmount] = useState('');
-  const [want, setWant] = useState('');
-  const [have, setHave] = useState('');
+  const [amount, setAmount] = useState("");
+  const [want, setWant] = useState("");
+  const [have, setHave] = useState("");
   const dispatch = useDispatch();
   /* -------------------------------------------------------------------------- */
   const cleanForm = () => {
-    setWant('');
-    setHave('');
-    setAmount('');
+    setWant("");
+    setHave("");
+    setAmount("");
   };
   /* ------------------------------ HANDLE CHANGE ----------------------------- */
   const handleChange = ({ target }) => {
-    if (target.name === 'From') {
+    if (target.name === "From") {
       setHave(target.value);
-    } else if (target.name === 'To') {
+    } else if (target.name === "To") {
       setWant(target.value);
     } else {
       setAmount(target.value);
     }
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if (amount.trim() === '' || amount.trim() === '0') {
-      toast.error('Please enter an amount.');
+    if (amount.trim() === "" || amount.trim() === "0") {
+      toast.error("Please enter an amount.");
       return;
     }
-    if (want.trim() === '') {
-      toast.error('Please select a conversion destination.');
+    if (want.trim() === "") {
+      toast.error("Please select a conversion destination.");
       return;
     }
-    if (have.trim() === '') {
-      toast.error('Please select a conversion source.');
+    if (have.trim() === "") {
+      toast.error("Please select a conversion source.");
       return;
     }
     if (have.trim() === want.trim()) {
-      toast.error('Please select an another one currency ');
+      toast.error("Please select an another one currency ");
       return;
     } else {
       const searchData = {
@@ -82,24 +82,24 @@ const ConverterForm = () => {
               sx={{
                 maxWidth: 250,
               }}
-              value={'CAD'}
+              value={"CAD"}
             >
               <span>$ -</span>
               CAD (Canadian Dollar)
             </MenuItem>
-            <MenuItem value={'GBP'}>
+            <MenuItem value={"GBP"}>
               <span>£ -</span> GBP (Pound Sterling)
             </MenuItem>
-            <MenuItem value={'CNY'}>
+            <MenuItem value={"CNY"}>
               <span>¥ -</span> CNY (Yuán)
             </MenuItem>
-            <MenuItem value={'USD'}>
+            <MenuItem value={"USD"}>
               <span>$ -</span> USD (Dollar)
             </MenuItem>
-            <MenuItem value={'EUR'}>
+            <MenuItem value={"EUR"}>
               <span>€ -</span>EUR (Euro)
             </MenuItem>
-            <MenuItem value={'JPY'}>
+            <MenuItem value={"JPY"}>
               <span>¥ -</span>JPY (Yen)
             </MenuItem>
           </Select>
@@ -119,27 +119,27 @@ const ConverterForm = () => {
             onChange={handleChange}
           >
             <MenuItem
-              value={'EUR'}
+              value={"EUR"}
               sx={{
                 width: 250,
               }}
             >
               <span>€ -</span>EUR (Euro)
             </MenuItem>
-            <MenuItem value={'JPY'}>
+            <MenuItem value={"JPY"}>
               <span>¥ -</span>JPY (Yen)
             </MenuItem>
-            <MenuItem value={'CAD'}>
+            <MenuItem value={"CAD"}>
               <span>$ -</span>
               CAD (Canadian Dollar)
             </MenuItem>
-            <MenuItem value={'GBP'}>
+            <MenuItem value={"GBP"}>
               <span>£ -</span> GBP (Pound Sterling)
             </MenuItem>
-            <MenuItem value={'CNY'}>
+            <MenuItem value={"CNY"}>
               <span>¥ -</span> CNY (Yuán)
             </MenuItem>
-            <MenuItem value={'USD'}>
+            <MenuItem value={"USD"}>
               <span>$ -</span> USD (Dollar)
             </MenuItem>
           </Select>
@@ -153,7 +153,7 @@ const ConverterForm = () => {
         value={amount}
         onChange={handleChange}
       />
-      <Button type="submit">Get started</Button>
+      <Button type="submit">Swap</Button>
     </FormContainer>
   );
 };
